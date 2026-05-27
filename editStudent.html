@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Student</title>
+    </head>
+    <body>
+        <h1>Edit Student</h1>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="addStudent.html">Add Student</a>
+            <a href="viewStudent.html">View Students</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+        <br/><br/>
+        <form action="viewStudent.html" method="get">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required /><br/><br/>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" required /><br/><br/>
+            
+            <label for="age">Age:</label>
+            <input type="number" id="age" required /><br/><br/>
+
+            <label for="cgpa">CGPA:</label>
+            <input type="number" id="cgpa" step="0.01" required /><br/><br/>
+
+            <input type="submit" value="Update Student"/><br/><br/>
+    </body>
+</html>
