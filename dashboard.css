@@ -33,35 +33,3 @@ nav a:hover{
     padding:5px 10px;
     border-radius:3px;
 }
-
-form{
-    width:300px;
-    margin:20px auto;
-    background-color:rgb(106, 18, 18);
-    padding:20px;
-    border-radius:10px;
-    text-align:center;
-}
-
-label{
-    color:white;
-    font-size:15px;
-    font-weight:bold;
-}
-
-input{
-    width:100%;
-    padding:10px;
-    margin:10px 0px 10px 0px;
-    border:0px solid grey;
-    border-radius:5px;
-    box-sizing:border-box;
-}
-
-.button{
-    color:rgb(106, 18, 18);;
-    font-size:15px;
-    font-weight:bold;
-    background-color:white;
-
-}
