@@ -3,7 +3,7 @@
     padding: 0;
     font-family: sans-serif;
     color:black;
-}   
+}
 
 body{
     background-color: white;
@@ -24,7 +24,7 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    margin:5px 10px
+    margin:5px 10px;
 }
 
 nav a:hover{
@@ -33,7 +33,6 @@ nav a:hover{
     padding:5px 10px;
     border-radius:3px;
 }
-
 
 form{
     width:300px;
@@ -60,9 +59,8 @@ input{
 }
 
 .button{
-    color:rgb(106, 18, 18);;
+    color:rgb(106, 18, 18);
     font-size:15px;
     font-weight:bold;
     background-color:white;
-
 }
