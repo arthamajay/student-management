@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 12</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .traffic-light {
+                background-color: #111;
+                border-radius: 20px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                width: 100px;
+                align-items: center;
+            }
+
+            .light {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background-color: #333; 
+            }
+
+            .red {
+                animation: redCycle 6s infinite;
+            }
+
+            .yellow {
+                animation: yellowCycle 6s infinite;
+            }
+
+            .green {
+                animation: greenCycle 6s infinite;
+            }
+
+            @keyframes redCycle {
+                0%, 33.33% { background-color: #ff3333; }
+                33.34%, 100% { background-color: #333; }
+            }
+
+            @keyframes yellowCycle {
+                0%, 33.33% { background-color: #333; }
+                33.34%, 66.66% { background-color: #ffcc00; }
+                66.67%, 100% { background-color: #333; }
+            }
+
+            @keyframes greenCycle {
+                0%, 66.66% { background-color: #333; }
+                66.67%, 100% { background-color: #00cc44; }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="traffic-light">
+            <div class="light red"></div>
+            <div class="light yellow"></div>
+            <div class="light green"></div>
+        </div>
+
+    </body>
+</html>

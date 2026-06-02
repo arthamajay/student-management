@@ -1,0 +1,16 @@
+/* Apply styles to the paragraph elemts*/
+p{
+    font-size:20px;
+    font-family:"Roboto";
+}
+
+/* Styles to the heading elements in the entire documnent*/
+h1{
+    color:red;
+}
+
+/* Applies styles to the body element of the document*/
+body{
+    background:linear-gradient(yellow,green);
+    height:100vh;
+}

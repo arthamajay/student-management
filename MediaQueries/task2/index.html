@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .profile{
+                display:flex;
+                padding:20px;
+            }
+
+            .profile img{
+                width:200px;
+                height:300px;
+                border-radius:50%;
+                margin-left:auto;
+            }
+
+            .profile div{
+                padding:20px;
+                margin-right:auto;
+                font-family:Roboto, sans-serif;
+                font-size:18px;
+                font-weight:500;
+            }
+
+            @media all and (max-width:768px){
+                .profile{
+                    display:flex;
+                    flex-direction:column;
+                    justify-content:center;
+                    align-items:center;
+                }
+                .profile img{
+                    margin-left:0px;
+                }
+                .profile div{
+                    margin-right:0px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Task 2</h1>
+        <div class="profile">
+            <img src="https://image4.photobiz.com/8911/5_20221115121831_18337820_xlarge.jpg"/>
+            <div>
+                <h1>Details </h1>
+                <p>Name: Bob </p>
+                <p>Branch: CSE - DS</p>
+                <p>Email: bob@gmail.com</p>
+            </div>
+        </div>
+    </body>
+</html>

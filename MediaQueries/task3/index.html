@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .images{
+                display:grid;
+                grid-template-rows:repeat(2,1fr);
+                grid-template-columns:repeat(4,1fr);
+                gap:10px;
+            }
+            .images img{
+                width:100%;
+                height:auto;
+            }
+
+            @media all and (min-width:768px)and (max-width:1024px){
+                .images{
+                    grid-template-rows:repeat(4,1fr);
+                    grid-template-columns:repeat(2,1fr);
+                }
+            }
+
+            @media all and (min-width:0px)and (max-width:767px){
+                .images{
+                    grid-template-rows:repeat(8,1fr);
+                    grid-template-columns:repeat(1,1fr);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="images">
+            <img src="https://image4.photobiz.com/8911/5_20221115121831_18337820_xlarge.jpg" alt="Image 1" style="width:100%;max-width:300px;">
+            <img src="https://image4.photobiz.com/8911/5_20221115121831_18337820_xlarge.jpg" alt="Image 2" style="width:100%;max-width:300px;">
+            <img src="https://image4.photobiz.com/8911/5_20221115121831_18337820_xlarge.jpg" alt="Image 3" style="width:100%;max-width:300px;">
+            <img src="https://image4.photobiz.com/8911/5_20221115121831_18337820_xlarge.jpg" alt="Image 4" style="width:100%;max-width:300px;">
+            <img src="https://image4.photobiz.com/8911/5_20221115121831_18337820_xlarge.jpg" alt="Image 5" style="width:100%;max-width:300px;">
+            <img src="https://image4.photobiz.com/8911/5_20221115121831_18337820_xlarge.jpg" alt="Image 6" style="width:100%;max-width:300px;">
+            <img src="https://image4.photobiz.com/8911/5_20221115121831_18337820_xlarge.jpg" alt="Image 7" style="width:100%;max-width:300px;">
+            <img src="https://image4.photobiz.com/8911/5_20221115121831_18337820_xlarge.jpg" alt="Image 8" style="width:100%;max-width:300px;">            
+        </div>
+    </body>
+</html>

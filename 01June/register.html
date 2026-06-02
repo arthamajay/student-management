@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Cognizant Community Portal</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+
+      .register-hero {
+        background: linear-gradient( #1a73e8, #0d47a1);
+        color: #fff;
+        padding: 48px 20px;
+        text-align: center;
+      }
+
+      .register-hero h1 { 
+        margin-bottom: 8px; 
+      }
+
+      .event-preview {
+        display: none;
+        background: #e3f2fd;
+        border: 1px solid #90caf9;
+        border-left: 4px solid var(--primary);
+        border-radius: var(--radius);
+        padding: 16px 20px;
+        margin-bottom: 24px;
+        gap: 16px;
+        align-items: center;
+      }
+      .event-preview.show { display: flex; }
+      .event-preview img {
+        width: 80px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 6px;
+        flex-shrink: 0;
+      }
+      .event-preview-info h4 {
+        font-size: 1rem;
+        color: var(--primary);
+        margin-bottom: 4px;
+      }
+      .event-preview-info p {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin: 0;
+      }
+      /* Success card */
+      .success-card {
+        display: none;
+        text-align: center;
+        padding: 48px 32px;
+      }
+      .success-card.show { display: block; }
+      .success-card .success-icon { font-size: 4rem; margin-bottom: 16px; }
+      .success-card h2 { color: var(--success); margin-bottom: 10px; }
+      .success-card p  { color: var(--muted); font-size: 0.95rem; margin-bottom: 6px; }
+      
+      #reg-event-select {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+      }
+
+      #reg-event-select option { 
+        padding: 6px; 
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <nav id="main-nav">
+      <div class="nav-inner">
+        <span class="nav-logo">Cognizant Community</span>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="register.html" class="active">Register</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main id="main-content">
+
+      <div class="register-hero">
+        <div class="container">
+          <h1>Event Registration</h1>
+          <p>Choose an event below and fill in your details to reserve your spot.</p>
+        </div>
+      </div>
+
+      <section>
+        <div class="container">
+          <div class="card" style="max-width: 680px; margin: 0 auto;">
+            <div style="padding: 10px;">
+              <h3 style="margin-bottom: 6px;">Reserve Your Spot</h3>
+              <p style="color: var(--muted); margin-bottom: 24px;">
+                Fields marked <span style="color:var(--danger)">*</span> are required.
+              </p>
+
+              <form>
+                <div>
+                  <label for="reg-event-select">Select Event <span style="color:var(--danger)">*</span></label>
+                  <select id="reg-event-select" name="event" class="form-control" required>
+                    <option>-- Choose an event --</option>
+                    <option value="summer-festival">Summer Festival</option>
+                    <option value="baking-workshop">Baking Workshop</option>
+                    <option value="city-marathon">City Marathon 5K</option>
+                    <option value="cultural-heritage-fair">Cultural Heritage Fair</option>
+                    <option value="yoga-in-the-park">Yoga in the Park</option>
+                    <option value="jazz-night">Jazz Night</option>
+                  </select>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="reg-name">Full Name <span style="color:var(--danger)">*</span></label>
+                    <input type="text" id="reg-name" name="full_name" class="form-control"
+                          placeholder="e.g. Ajay Kumar" required
+                          aria-describedby="name-error" />
+                    <span class="error-msg" id="name-error" role="alert"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="reg-email">Email <span style="color:var(--danger)">*</span></label>
+                    <input type="email" id="reg-email" name="email" class="form-control"
+                          placeholder="arthamajay7@gmail.com" required
+                          aria-describedby="email-error" />
+                    <span class="error-msg" id="email-error" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-row">
+
+                  <div class="form-group">
+                    <label for="reg-phone">Phone Number</label>
+                    <input type="tel" id="reg-phone" name="phone" class="form-control"
+                          placeholder="e.g. 8555864922" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="reg-members">No. of Members</label>
+                    <select id="reg-members" name="members" class="form-control">
+                      <option value="1">1 — Just me</option>
+                      <option value="2">2 members</option>
+                      <option value="3">3 members</option>
+                      <option value="4">4 members</option>
+                      <option value="5">5+ members</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="reg-message">
+                    Special Requirements
+                    <span style="color:var(--muted); font-weight:400;">(optional)</span>
+                  </label>
+                  <textarea id="reg-message" name="message" class="form-control" rows="3"
+                            placeholder="Dietary needs, accessibility requirements, questions..."></textarea>
+                </div>
+                <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                  <button type="submit" class="btn btn-primary">✅ Confirm Registration</button>
+                  <button type="reset" class="btn btn-outline" onclick="clearForm()">Clear</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="main-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Cognizant Community</h4>
+          <p>Organised by the Cognizant Community Council. Bringing residents together through events, activities, and shared experiences.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="events.html">Browse Events</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="feedback.html">Share Feedback</a></li>
+            <li><a href="contact.html">Contact Council</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy 2026 Cognizant Community Council. All rights reserved.</p>
+      </div>
+    </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+  </body>
+</html>

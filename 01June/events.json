@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Summer Music Festival",
+    "category": "music",
+    "date": "2026-06-15",
+    "location": "Central Park Amphitheater",
+    "seats": 120,
+    "fee": 15,
+    "description": "An evening of live music featuring local bands and artists.",
+    "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&h=200&fit=crop"
+  },
+  {
+    "id": 2,
+    "title": "Baking Workshop",
+    "category": "workshop",
+    "date": "2026-06-20",
+    "location": "Community Center Hall B",
+    "seats": 30,
+    "fee": 10,
+    "description": "Learn artisan bread and pastry techniques from local chefs.",
+    "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=200&fit=crop"
+  },
+  {
+    "id": 3,
+    "title": "City Marathon 5K",
+    "category": "sports",
+    "date": "2026-07-04",
+    "location": "Riverside Trail",
+    "seats": 200,
+    "fee": 5,
+    "description": "Annual community run open to all ages and fitness levels.",
+    "image": "https://images.unsplash.com/photo-1571008887538-b36bb32f4571?w=400&h=200&fit=crop"
+  },
+  {
+    "id": 4,
+    "title": "City Marathon 5K",
+    "category": "culture",
+    "date": "2026-07-12",
+    "location": "Town Square",
+    "seats": 500,
+    "fee": 0,
+    "description": "Celebrate our city's diverse heritage with food, art, and performances.",
+    "image": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=400&h=200&fit=crop"
+  },
+  {
+    "id": 5,
+    "title": "Yoga in the Park",
+    "category": "health",
+    "date": "2026-06-28",
+    "location": "Greenfield Park",
+    "seats": 50,
+    "fee": 8,
+    "description": "Morning yoga session for all skill levels. Bring your own mat.",
+    "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=200&fit=crop"
+  },
+  {
+    "id": 6,
+    "title": "Jazz Night",
+    "category": "music",
+    "date": "2026-08-01",
+    "location": "Riverside Pavilion",
+    "seats": 80,
+    "fee": 12,
+    "description": "An intimate jazz evening under the stars.",
+    "image": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=400&h=200&fit=crop"
+  }
+]

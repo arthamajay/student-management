@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Share your feedback about Cognizant community events." />
+  <title>Feedback | Cognizant Community Portal</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <span class="nav-logo">Cognizant Community</span>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="feedback.html" class="active">Feedback</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section id="feedback" class="section-padding" style="background:#f7fafc;">
+      <div class="container">
+        <h2 class="section-title">Event Feedback</h2>
+        <div class="card" style="max-width:680px;margin:0 auto;">
+          <form id="feedback-form" action="#" method="post" novalidate onsubmit="submitFeedback(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fb-name">Your Name</label>
+                <input type="text" id="fb-name" name="fb-name" class="form-control" placeholder="Ajay Kumar" required />
+              </div>
+              <div class="form-group">
+                <label for="fb-phone">Phone Number</label>
+                <input type="tel" id="fb-phone" name="fb-phone" class="form-control" placeholder="e.g. 8555864922" aria-describedby="phone-validation" oninput="validatePhone(this)" />
+                <span id="phone-validation" role="alert"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fb-event-type">Event Category</label>
+              <select id="fb-event-type" name="fb-event-type" class="form-control" onchange="showEventFee(this)">
+                <option value="">-- Select a category --</option>
+                <option value="music">🎵 Music</option>
+                <option value="workshop">🍞 Workshop</option>
+                <option value="sports">🏃 Sports</option>
+                <option value="culture">🎨 Culture</option>
+                <option value="health">🧘 Health</option>
+              </select>
+              <div id="fee-display" role="status" aria-live="polite"></div>
+            </div>
+            <div class="form-group">
+              <label for="fb-message">Your Feedback</label>
+              <textarea id="fb-message" name="fb-message" class="form-control" rows="5" placeholder="Share your experience (max 300 characters)..." oninput="countChars(this)"></textarea>
+              <div class="char-counter"><span id="char-count">0 / 300</span></div>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <button type="submit" class="btn btn-primary">📨 Submit Feedback</button>
+              <button type="reset" class="btn btn-outline">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <footer id="main-footer" role="contentinfo">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>🏘️ Cognizant Community</h4>
+        <p style="font-size:0.88rem;line-height:1.7;">Organised by the Cognizant Community Council. Bringing residents together through events, activities, and shared experiences.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="events.html">Browse Events</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="feedback.html">Share Feedback</a></li>
+          <li><a href="contact.html">Contact Council</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Cognizant Community Council. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

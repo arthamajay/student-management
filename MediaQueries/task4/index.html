@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 4</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .container{
+                display:flex;
+                flex-direction:column;
+            }
+            .header{
+                background-color:blue;
+                padding:10px;
+                text-align:center;
+                color:white;
+            }
+            .main-content{
+                display:grid;
+                grid-template-columns:1fr 3fr;
+
+            }
+            .sidebar{
+                background-color:lightgray;
+                padding:10px;
+                color:black;
+            }
+            .main{
+                background-color:violet;
+                padding:10px;
+            }
+            @media all and (max-width:768px){
+                .sidebar{
+                    display:none;
+                }
+                .main-content{
+                    grid-template-columns:1fr;
+                    text-align:center;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Task - 4 </h1>
+        <div class="container">
+            <div class="header">
+                Header
+            </div>
+            <div class="main-content">
+                <div class="sidebar">
+                    Side Bar
+                </div>
+                <div class="main">
+                    Main Content
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
