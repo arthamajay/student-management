@@ -1,16 +1,20 @@
-*{
-    margin:0px;
-    padding:0px;
-    color:#0d6efd;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; 
 }
 
-.main-content{
-    height:100vh;
+body {
+    color: #0d6efd;
 }
 
-.navbar-image{
-    border-radius:50%;
-    margin-right:10px;
-    height:80px;
-    width:80px;
+.main-content {
+    min-height: 100vh; 
+
+}
+.navbar-image {
+    border-radius: 50%;
+    margin-right: 10px;
+    height: 80px;
+    width: 80px;
 }
