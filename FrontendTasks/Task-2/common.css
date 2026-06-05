@@ -1,0 +1,16 @@
+*{
+    margin:0px;
+    padding:0px;
+    color:#0d6efd;
+}
+
+.main-content{
+    height:100vh;
+}
+
+.navbar-image{
+    border-radius:50%;
+    margin-right:10px;
+    height:80px;
+    width:80px;
+}
