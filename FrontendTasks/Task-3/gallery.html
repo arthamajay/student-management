@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Event Management System - Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">College Events</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="gallery.html" aria-current="page">Gallery</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Registration</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-4">
+        <section class="container">
+            <div class="text-center mb-4">
+                <span class="hero-badge">📸 Gallery</span>
+                <h2 class="fw-bold mt-3">Event photographs</h2>
+                <p class="text-muted">Click any photo to view it in a modal.</p>
+            </div>
+
+            <div class="row g-4" id="gallery-grid">
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card h-100 card-shadow">
+                        <img class="gallery-img card-img-top"
+                            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&h=600&fit=crop"
+                            alt="Technical Quiz" data-bs-toggle="modal" data-bs-target="#m1" />
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card h-100 card-shadow">
+                        <img class="gallery-img card-img-top"
+                            src="https://images.unsplash.com/photo-1521737604893-d14ccf5d5d8c?w=900&h=600&fit=crop"
+                            alt="Hackathon" data-bs-toggle="modal" data-bs-target="#m2" />
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card h-100 card-shadow">
+                        <img class="gallery-img card-img-top"
+                            src="https://images.unsplash.com/photo-1522252236884-0a61c4e9f8b6?w=900&h=600&fit=crop"
+                            alt="Poster Presentation" data-bs-toggle="modal" data-bs-target="#m3" />
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card h-100 card-shadow">
+                        <img class="gallery-img card-img-top"
+                            src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=900&h=600&fit=crop"
+                            alt="Coding Contest" data-bs-toggle="modal" data-bs-target="#m4" />
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card h-100 card-shadow">
+                        <img class="gallery-img card-img-top"
+                            src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=900&h=600&fit=crop"
+                            alt="Project Expo" data-bs-toggle="modal" data-bs-target="#m5" />
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card h-100 card-shadow">
+                        <img class="gallery-img card-img-top"
+                            src="https://images.unsplash.com/photo-1520697222865-7b3d4f1f0c9b?w=900&h=600&fit=crop"
+                            alt="Cultural Fest" data-bs-toggle="modal" data-bs-target="#m6" />
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <!-- Static Bootstrap modals (no custom JS) -->
+    <div class="modal fade" id="m1" tabindex="-1" aria-labelledby="m1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="m1Label">Technical Quiz</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&h=800&fit=crop"
+                        alt="Technical Quiz" class="img-fluid rounded" style="max-height: 70vh; object-fit: contain;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="m2" tabindex="-1" aria-labelledby="m2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="m2Label">Hackathon</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14ccf5d5d8c?w=1200&h=800&fit=crop"
+                        alt="Hackathon" class="img-fluid rounded" style="max-height: 70vh; object-fit: contain;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="m3" tabindex="-1" aria-labelledby="m3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="m3Label">Poster Presentation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="https://images.unsplash.com/photo-1522252236884-0a61c4e9f8b6?w=1200&h=800&fit=crop"
+                        alt="Poster Presentation" class="img-fluid rounded"
+                        style="max-height: 70vh; object-fit: contain;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="m4" tabindex="-1" aria-labelledby="m4Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="m4Label">Coding Contest</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=1200&h=800&fit=crop"
+                        alt="Coding Contest" class="img-fluid rounded" style="max-height: 70vh; object-fit: contain;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="m5" tabindex="-1" aria-labelledby="m5Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="m5Label">Project Expo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&h=800&fit=crop"
+                        alt="Project Expo" class="img-fluid rounded" style="max-height: 70vh; object-fit: contain;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="m6" tabindex="-1" aria-labelledby="m6Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="m6Label">Cultural Fest</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="https://images.unsplash.com/photo-1520697222865-7b3d4f1f0c9b?w=1200&h=800&fit=crop"
+                        alt="Cultural Fest" class="img-fluid rounded" style="max-height: 70vh; object-fit: contain;" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-4">
+
+        <div class="container text-center">
+            <div class="fw-bold text-white">College Event Management System</div>
+            <div class="text-white-50">© 2026 • All rights reserved</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

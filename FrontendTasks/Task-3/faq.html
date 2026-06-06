@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Event Management System - FAQ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">College Events</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Registration</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-4">
+        <section class="container">
+            <div class="text-center mb-4">
+                <span class="hero-badge">❓ FAQ</span>
+                <h2 class="fw-bold mt-3">Frequently asked questions</h2>
+                <p class="text-muted">Find quick answers before you register.</p>
+            </div>
+
+            <div class="card card-shadow" style="max-width: 900px; margin: 0 auto;">
+                <div class="card-body p-4">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="q1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#c1" aria-expanded="true" aria-controls="c1">
+                                    How to register?
+                                </button>
+                            </h2>
+                            <div id="c1" class="accordion-collapse collapse show" aria-labelledby="q1"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Go to the <strong>Events</strong> page, click <strong>Register</strong> on your
+                                    chosen event, then fill the registration form and submit.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="q2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#c2" aria-expanded="false" aria-controls="c2">
+                                    Is there a registration fee?
+                                </button>
+                            </h2>
+                            <div id="c2" class="accordion-collapse collapse" aria-labelledby="q2"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Some events may have a small fee; check the event details on the Events page. In
+                                    this demo, fees are shown per event card.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="q3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#c3" aria-expanded="false" aria-controls="c3">
+                                    Can I participate in multiple events?
+                                </button>
+                            </h2>
+                            <div id="c3" class="accordion-collapse collapse" aria-labelledby="q3"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes. You can register for multiple events using the registration form (up to
+                                    available seats).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a class="btn btn-primary btn-lg" href="events.html">Browse Events</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-4">
+        <div class="container text-center">
+            <div class="fw-bold text-white">College Event Management System</div>
+            <div class="text-white-50">© 2026 • All rights reserved</div>
+        </div>
+    </footer>
+</body>
+
+</html>

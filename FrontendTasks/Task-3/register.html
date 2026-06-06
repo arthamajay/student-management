@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Event Management System - Event Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">College Events</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="register.html"
+                            aria-current="page">Registration</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-4">
+        <section class="container">
+            <div class="text-center mb-4">
+                <span class="hero-badge">📝 Event Registration</span>
+                <h2 class="fw-bold mt-3">Reserve your spot</h2>
+                <p class="text-muted">Fill in required details and submit. A success alert will appear.</p>
+            </div>
+
+            <div class="card card-shadow" style="max-width: 720px; margin: 0 auto;">
+                <div class="card-body p-4">
+                    <div class="alert alert-secondary mb-3" role="alert">
+                        Registration form is static (no JavaScript submission).
+                    </div>
+
+
+
+                    <form id="registration-form" action="#" method="get">
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="student-name" class="form-label fw-semibold">Student Name <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" id="student-name" class="form-control"
+                                    placeholder="e.g., Arjun Rao" />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="roll-number" class="form-label fw-semibold">Roll Number <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" id="roll-number" class="form-control"
+                                    placeholder="e.g., 21BCS0123" />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="branch" class="form-label fw-semibold">Branch <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" id="branch" class="form-control" placeholder="e.g., CSE" />
+
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="email" class="form-label fw-semibold">Email <span
+                                        class="text-danger">*</span></label>
+                                <input type="email" id="email" class="form-control" placeholder="name@example.com" />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="mobile" class="form-label fw-semibold">Mobile Number <span
+                                        class="text-danger">*</span></label>
+                                <input type="tel" id="mobile" class="form-control" placeholder="e.g., 9876543210" />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="event-selection" class="form-label fw-semibold">Event Selection <span
+                                        class="text-danger">*</span></label>
+                                <select id="event-selection" class="form-select">
+                                    <option value="1">Technical Quiz (2026-06-15)</option>
+                                    <option value="2">Hackathon (2026-06-22)</option>
+                                    <option value="3">Poster Presentation (2026-06-28)</option>
+                                    <option value="4">Coding Contest (2026-07-05)</option>
+                                    <option value="5">Project Expo (2026-07-12)</option>
+                                    <option value="6">Cultural Fest (2026-07-20)</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-3 flex-wrap mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">✅ Confirm Registration</button>
+                            <button type="reset" class="btn btn-outline-secondary btn-lg">Clear</button>
+
+                        </div>
+
+                        <p class="text-muted mt-3 mb-0" style="font-size:.9rem;">
+                            Note: This is a static demo page.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-4">
+        <div class="container text-center">
+            <div class="fw-bold text-white">College Event Management System</div>
+            <div class="text-white-50">© 2026 • All rights reserved</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

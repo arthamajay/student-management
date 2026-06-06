@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Event Management System - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">College Events</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-lg-3">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="register.html">Registration</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="hero-badge"><i class="bi bi-mortarboard-fill"></i> College Event Management
+                        System</span>
+                    <h1 class="text-white mt-3 display-5 fw-bold">Manage events. Register fast. Stay updated.</h1>
+                    <p class="text-white-50 mt-3 mb-4 fs-5">
+                        Explore upcoming college events, register in seconds, and view schedules—all in one place.
+                    </p>
+                    <a href="register.html" class="btn btn-warning fw-bold">Register Now</a>
+                    <div class="mt-4 d-flex flex-wrap gap-3">
+                        <div class="bg-white bg-opacity-10 border border-white rounded-4 px-3 py-2">
+                            <div class="fw-bold text-white"><i class="bi bi-calendar-event-fill"></i> Upcoming Events
+                            </div>
+                            <div>6+ active listings</div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 border border-white rounded-4 px-3 py-2">
+                            <div class="fw-bold text-white"><i class="bi bi-file-earmark-fill"></i> Easy Registration
+                            </div>
+                            <div>Student details form</div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 border border-white rounded-4 px-3 py-2">
+                            <div class="fw-bold text-white"><i class="bi bi-clock"></i> Event Schedule</div>
+                            <div>• Time • Venue • Program</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner rounded-4 overflow-hidden shadow">
+                            <div class="carousel-item active">
+                                <img src="https://cdn.prod.website-files.com/6593c9a7f9ab9dc8b1763db2/65b0566852bdf30e0a96201c_tech-events-meetups-hero-image.jpg"
+                                    class="d-block w-100" alt="Event banner" style="height:340px; object-fit:cover;" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Student-led Activities</h5>
+                                    <p>Technical, cultural & competitive events</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&h=700&fit=crop"
+                                    class="d-block w-100" alt="Workshop" style="height:340px; object-fit:cover;" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Workshops & Competitions</h5>
+                                    <p>Register and participate</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://www.gehcm.fr/wp-content/uploads/2025/06/hackathon-1069124fp.jpg"
+                                    class="d-block w-100" alt="Hackathon" style="height:340px; object-fit:cover;" />
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Hackathons & Expo</h5>
+                                    <p>Show your ideas to the campus</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+                    <div class="row g-3 mt-3">
+                        <div class="col-sm-6">
+                            <a class="btn btn-outline-light w-100" href="events.html">View Events</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a class="btn btn-outline-light w-100" href="schedule.html">Event Schedule</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-4">
+        <section class="container">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Event Highlights</h2>
+                <p class="text-muted">Quick overview of what students can look forward to.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card card-shadow h-100">
+                        <div class="card-body">
+                            <div class="fs-1"><i class="fa-solid fa-brain"></i></div>
+                            <h5 class="card-title">Technical Quiz</h5>
+                            <p class="text-muted">Test your fundamentals with rounds and scoring.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-shadow h-100">
+                        <div class="card-body">
+                            <div class="fs-1"><i class="fa-solid fa-laptop-code"></i></div>
+                            <h5 class="card-title">Hackathon</h5>
+                            <p class="text-muted">Build prototypes with mentor guidance.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-shadow h-100">
+                        <div class="card-body">
+                            <div class="fs-1"><i class="fa-solid fa-theater-masks"></i></div>
+                            <h5 class="card-title">Cultural Fest</h5>
+                            <p class="text-muted">Perform, celebrate and enjoy campus culture.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mt-4">
+            <div class="alert alert-info mb-0" role="alert">
+                Tip: Go to <strong>Events</strong> to pick your favorite program, then register in
+                <strong>Registration</strong>.
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-4">
+        <div class="container text-center">
+            <div class="fw-bold text-white">College Event Management System</div>
+            <div class="text-white-50">© 2026 • All rights reserved</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
