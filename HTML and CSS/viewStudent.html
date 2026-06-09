@@ -15,54 +15,73 @@
         <h1>View Students</h1>
         <br/><br/>
         <table border="1" cellpadding="10"  cellspacing="0">
-            <tr>
-                <th>Roll No</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Age</th>
-                <th>CGPA</th>
-                <th>Actions</th>
-            </tr>
-            <tr>
-                <td>101</td>
-                <td>Alice</td>
-                <td>alice@gmail.com</td>
-                <td>20</td>
-                <td>9.8</td>
-                <td>
-                    <a href="editStudent.html">Edit</a>
-                </td>
-            </tr>
-            <tr>
-                <td>102</td>
-                <td>Bob</td>
-                <td>bob@gmail.com</td>
-                <td>19</td>
-                <td>8.9</td>
-                <td>
-                    <a href="editStudent.html">Edit</a>
-                </td>
-            </tr>
-            <tr>
-                <td>103</td>
-                <td>Charlie</td>
-                <td>charlie@gmail.com</td>
-                <td>21</td>
-                <td>9.2</td>
-                <td>
-                    <a href="editStudent.html">Edit</a>
-                </td>
-            </tr>
-            <tr>
-                <td>104</td>
-                <td>David</td>
-                <td>david@gmail.com</td>
-                <td>20</td>
-                <td>8.5</td>
-                <td>
-                    <a href="editStudent.html">Edit</a>
-                </td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Roll No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>CGPA</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
         </table>
     </body>
+    <script>
+
+        window.onload=function(){
+            renderTable();
+        }
+
+        function renderTable(){
+
+            const table=document.getElementsByTagName("Table")[0];
+
+            while(table.rows.length>1){
+                table.deleteRow(1);
+            }
+
+            let students = JSON.parse(localStorage.getItem("students")) || [];
+
+            students.forEach(student => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${student.rollno}</td>
+                    <td>${student.name}</td>
+                    <td>${student.email}</td>
+                    <td>${student.age}</td>
+                    <td>${student.cgpa}</td>
+                    <td><a href="#" onclick="editStudent(event,'${student.rollno}')">EDIT</a>
+                    <a href="#" onclick="deleteStudent(event, '${student.rollno}')">DELETE</a></td>
+                `;
+                table.appendChild(row);
+            });
+        }
+
+        function deleteStudent(event, rollno) {
+            event.preventDefault();
+
+            if (confirm("Are you sure you want to permanently delete this student?")) {
+                let students=JSON.parse(localStorage.getItem("students")) || [];
+                students=students.filter(student => student.rollno!==rollno);
+                localStorage.setItem("students", JSON.stringify(students));
+                renderTable();
+            }
+        }
+
+        function editStudent(event,rollno){
+            let students=JSON.parse(localStorage.getItem("students")) || [];
+            students.forEach(student=>{
+                if(rollno===student.rollno){
+                    localStorage.setItem("editStudent",JSON.stringify(student));
+                    window.location.href="editStudent.html";
+                    return;
+                }
+            })
+        }
+
+    </script>
 </html>

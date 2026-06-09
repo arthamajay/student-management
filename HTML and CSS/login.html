@@ -11,9 +11,9 @@
             <a href="register.html">Register</a>
         </nav>
         <h1>Login</h1>
-        <form action="dashboard.html" method="get">
-            <label for="email">Email:</label>
-            <input type="email" id="email" required /><br/><br/>
+        <form onsubmit="login(event)">
+            <label for="username">Username:</label>
+            <input type="username" id="username" required /><br/><br/>
             
             <label for="password">Password:</label>
             <input type="password" id="password" required /><br/><br/>
@@ -21,4 +21,30 @@
             <input type="submit" value="Login" class="button"/><br/><br/>
         </form>
     </body>
+    <script>
+        function login(event) {
+            event.preventDefault();
+
+            const usernameInput=document.getElementById("username").value;
+            const passwordInput=document.getElementById("password").value;
+            const userData=localStorage.getItem("user");
+            if(!userData){
+                alert("No registered account found. Please register first.");
+                return;
+            }
+            const obj=JSON.parse(userData);
+            if(usernameInput!==obj.name) {
+                alert("username not found");
+                return;
+            }
+
+            if (passwordInput!==obj.pass) {
+                alert("password is incorrect");
+                return;
+            }
+
+            alert("login successful");
+            window.location.href="dashboard.html";
+        }
+    </script>
 </html>

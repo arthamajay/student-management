@@ -12,9 +12,9 @@
             <a href="logout.html">Logout</a>
         </nav>
         <h1>Edit Student</h1>
-        <form action="viewStudent.html" method="get">
+        <form onsubmit="updateStudent(event)">
             <label for="rollno">Roll No:</label>
-            <input type="text" id="rollno" required /><br/><br/>
+            <input type="text" id="rollno" required disabled /><br/><br/>
 
             <label for="name">Name:</label>
             <input type="text" id="name" required /><br/><br/>
@@ -30,4 +30,52 @@
 
             <input type="submit" value="Update Student" class="button"/><br/><br/>
     </body>
+    <script>
+
+        window.onload=function (){
+            renderStudent()
+        }
+
+        function renderStudent(){
+            let student=JSON.parse(localStorage.getItem("editStudent"));
+            const rollno=document.getElementById("rollno");
+            rollno.value=student.rollno;
+            const name=document.getElementById("name");
+            name.value=student.name;
+            const email=document.getElementById("email");
+            email.value=student.email;
+            const age=document.getElementById("age");
+            age.value=student.age;
+            const cgpa=document.getElementById("cgpa");
+            cgpa.value=student.cgpa;
+        }
+
+        function updateStudent(event){
+            event.preventDefault();
+            let students=JSON.parse(localStorage.getItem("students"));
+            const rollno=document.getElementById("rollno").value;
+            const name=document.getElementById("name").value;
+            const email=document.getElementById("email").value;
+            const age=document.getElementById("age").value;
+            const cgpa=document.getElementById("cgpa").value;
+
+            let studentObj={
+                rollno:rollno,
+                name:name,
+                email:email,
+                age:age,
+                cgpa:cgpa
+            }
+
+            let newStudents=[];
+            for(let student of students){
+                if(student.rollno!==rollno){
+                    newStudents.push(student);
+                }
+            }
+            newStudents.push(studentObj);
+            localStorage.setItem("students",JSON.stringify(newStudents));
+            window.location.href="viewStudent.html";
+        }
+    </script>
 </html>

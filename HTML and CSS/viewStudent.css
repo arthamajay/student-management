@@ -16,13 +16,19 @@ tr, th, td{
     text-align:center;
 }
 
-tr:nth-child(odd) td{
+tr:nth-child(even) td{
     background-color:rgb(106, 18, 18);
     color:white;
-    border-color:rgb(106, 18, 18);
+    border-color:black;
     border-width:1px;
 }
 
-tr:nth-child(odd) a{
+tr:nth-child(even) a{
     color:white
+}
+
+tr:nth-child(odd) td{
+    color:black;
+    border-color:black;
+    border-width:1px;
 }

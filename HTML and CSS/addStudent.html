@@ -13,7 +13,7 @@
             <a href="logout.html">Logout</a>
         </nav>
         <h1>Add Student</h1>  
-        <form action="viewStudent.html" method="get">
+        <form onsubmit="addStudent(event)">
             <label for="rollno">Roll No:</label>
             <input type="text" id="rollno" required/><br/><br/>
 
@@ -32,4 +32,26 @@
             <input type="submit" value="Add Student" class="button"/><br/><br/>
         </form>
     </body>
+    <script>
+        function addStudent(event) {
+            event.preventDefault();
+            const rollno=document.getElementById("rollno").value;
+            const name=document.getElementById("name").value;
+            const email=document.getElementById("email").value;
+            const age=document.getElementById("age").value;
+            const cgpa=document.getElementById("cgpa").value;
+            const studentObj={
+                rollno:rollno,
+                name:name,
+                email:email,
+                age:age,
+                cgpa:cgpa
+            };
+            let students=JSON.parse(localStorage.getItem("students")) || [];
+            students.push(studentObj);
+            localStorage.setItem("students",JSON.stringify(students));
+            alert("Student added successfully!");
+            window.location.href="viewStudent.html";
+        }
+    </script>
 </html>
