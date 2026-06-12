@@ -33,25 +33,32 @@
         </form>
     </body>
     <script>
-        function addStudent(event) {
+        async function addStudent(event) {
             event.preventDefault();
             const rollno=document.getElementById("rollno").value;
             const name=document.getElementById("name").value;
             const email=document.getElementById("email").value;
             const age=document.getElementById("age").value;
             const cgpa=document.getElementById("cgpa").value;
-            const studentObj={
+            const newStudent={
                 rollno:rollno,
                 name:name,
                 email:email,
                 age:age,
                 cgpa:cgpa
             };
-            let students=JSON.parse(localStorage.getItem("students")) || [];
-            students.push(studentObj);
-            localStorage.setItem("students",JSON.stringify(students));
-            alert("Student added successfully!");
-            window.location.href="viewStudent.html";
+            
+            const response=await fetch("http://localhost:3000/students",
+                {
+                    method:"POST",
+                    body:JSON.stringify(newStudent)
+                }
+            );
+            if(response.ok==true){
+                window.location.href="viewStudent.html";
+            }else{
+                alert("Something went Wrong")
+            }
         }
     </script>
 </html>

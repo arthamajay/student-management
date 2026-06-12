@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "username": "ajay",
+      "email": "ajay1@gmail.com",
+      "password": "nani",
+      "id": "3JkNM3MhROU"
+    },
+    {
+      "username": "ajay2",
+      "email": "ajay2@gmail.com",
+      "password": "nani",
+      "id": "SkG5VOrvT2Q"
+    }
+  ],
+  "students": [
+    {
+      "rollno": "6701",
+      "name": "Abhilash",
+      "email": "abhilash@gmail.com",
+      "age": "22",
+      "cgpa": "9",
+      "id": "hZ89ayWopNw"
+    },
+    {
+      "rollno": "6702",
+      "name": "Abhinav",
+      "email": "abhinav@gmail.com",
+      "age": "19",
+      "cgpa": "10",
+      "id": "pbm16TDtWh0"
+    }
+  ],
+  "editStudent": {
+    "rollno": "6702",
+    "name": "Abhinav",
+    "email": "abhinav@gmail.com",
+    "age": "19",
+    "cgpa": "100",
+    "id": "pbm16TDtWh0"
+  },
+  "$schema": ["./node_modules/json-server/schema.json"]
+}

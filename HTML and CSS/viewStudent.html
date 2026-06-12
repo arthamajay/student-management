@@ -26,7 +26,6 @@
                 </tr>
             </thead>
             <tbody>
-
             </tbody>
         </table>
     </body>
@@ -36,15 +35,16 @@
             renderTable();
         }
 
-        function renderTable(){
+        async function renderTable(){
 
             const table=document.getElementsByTagName("Table")[0];
 
             while(table.rows.length>1){
                 table.deleteRow(1);
             }
-
-            let students = JSON.parse(localStorage.getItem("students")) || [];
+            
+            const response=await fetch("http://localhost:3000/students");
+            let students=await response.json() || [];
 
             students.forEach(student => {
                 const row = document.createElement("tr");
@@ -61,27 +61,36 @@
             });
         }
 
-        function deleteStudent(event, rollno) {
+        async function deleteStudent(event, rollno) {
             event.preventDefault();
 
             if (confirm("Are you sure you want to permanently delete this student?")) {
-                let students=JSON.parse(localStorage.getItem("students")) || [];
-                students=students.filter(student => student.rollno!==rollno);
-                localStorage.setItem("students", JSON.stringify(students));
+                const response=await fetch("http://localhost:3000/students");
+                let students=await response.json() || [];
+                const student=students.find(student => student.rollno===rollno);
+                await fetch(`http://localhost:3000/students/${student.id}`,{
+                    method:"DELETE",
+                })
                 renderTable();
             }
         }
 
-        function editStudent(event,rollno){
-            let students=JSON.parse(localStorage.getItem("students")) || [];
-            students.forEach(student=>{
-                if(rollno===student.rollno){
-                    localStorage.setItem("editStudent",JSON.stringify(student));
-                    window.location.href="editStudent.html";
-                    return;
-                }
-            })
-        }
+        async function editStudent(event,rollno){
+            const response=await fetch("http://localhost:3000/students");
+            const students=await response.json();
+            const s=students.find(s=>s.rollno===rollno);
 
+            const response1=await fetch(`http://localhost:3000/editStudent`,{
+                method:"PUT",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify(s)
+            })
+            
+            if(response1.ok){
+                window.location.href="editStudent.html";
+            }
+        }
     </script>
 </html>

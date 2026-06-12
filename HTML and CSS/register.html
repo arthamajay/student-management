@@ -34,7 +34,7 @@
         </form>
     </body>
     <script>
-        function register(event) {
+        async function register(event) {
             event.preventDefault();
             const user=document.getElementById("username").value;
             const email=document.getElementById("email").value;
@@ -43,21 +43,24 @@
 
             const errorMsg=document.getElementById("errorMsg");
             
-            const userRegEx=/^[a-z|A-Z]{8,}$/;
-
-            if(!userRegEx.test(user)){
-                errorMsg.textContent="Username should be of 8 characters minimum";
-                return;
-            }
-            
             var obj={
-                "name":user,
+                "username":user,
                 "email":email,
-                "pass":pass
+                "password":pass
             };
 
-            localStorage.setItem("user",JSON.stringify(obj));
-            window.location.href="login.html";
+            if(pass==cpass){
+                const result=await fetch("http://localhost:3000/users",
+                {
+                    method:"POST",
+                    body:JSON.stringify(obj)
+                });
+                if(result.ok==true){
+                    window.location.href="login.html";
+                }else{
+                    alert("Registration Unsuccessful")
+                }
+            }
         }
     </script>
 </html>

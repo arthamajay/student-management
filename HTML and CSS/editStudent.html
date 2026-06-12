@@ -36,8 +36,10 @@
             renderStudent()
         }
 
-        function renderStudent(){
-            let student=JSON.parse(localStorage.getItem("editStudent"));
+        async function renderStudent(){
+            const response=await fetch("http://localhost:3000/editStudent");
+            let student=await response.json();
+            //console.log(student);
             const rollno=document.getElementById("rollno");
             rollno.value=student.rollno;
             const name=document.getElementById("name");
@@ -50,32 +52,37 @@
             cgpa.value=student.cgpa;
         }
 
-        function updateStudent(event){
+        async function updateStudent(event){
             event.preventDefault();
-            let students=JSON.parse(localStorage.getItem("students"));
             const rollno=document.getElementById("rollno").value;
             const name=document.getElementById("name").value;
             const email=document.getElementById("email").value;
             const age=document.getElementById("age").value;
             const cgpa=document.getElementById("cgpa").value;
 
-            let studentObj={
+            let updatedStudent={
                 rollno:rollno,
                 name:name,
                 email:email,
                 age:age,
                 cgpa:cgpa
             }
+            console.log(updateStudent)
+            const response1=await fetch("http://localhost:3000/students");
+            const students= await response1.json();
+            const student=students.find(s=>s.rollno===rollno)
+            const id=student.id;
 
-            let newStudents=[];
-            for(let student of students){
-                if(student.rollno!==rollno){
-                    newStudents.push(student);
-                }
+            const response=await fetch(`http://localhost:3000/students/${id}`,{
+                method:"PUT",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify(updatedStudent)
+            });
+            if(response.ok){
+                window.location.href="viewStudent.html";
             }
-            newStudents.push(studentObj);
-            localStorage.setItem("students",JSON.stringify(newStudents));
-            window.location.href="viewStudent.html";
         }
     </script>
 </html>

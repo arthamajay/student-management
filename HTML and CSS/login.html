@@ -22,29 +22,20 @@
         </form>
     </body>
     <script>
-        function login(event) {
+        async function login(event) {
             event.preventDefault();
 
             const usernameInput=document.getElementById("username").value;
             const passwordInput=document.getElementById("password").value;
-            const userData=localStorage.getItem("user");
-            if(!userData){
-                alert("No registered account found. Please register first.");
-                return;
-            }
-            const obj=JSON.parse(userData);
-            if(usernameInput!==obj.name) {
-                alert("username not found");
-                return;
-            }
 
-            if (passwordInput!==obj.pass) {
-                alert("password is incorrect");
-                return;
-            }
+            const result=await fetch("http://localhost:3000/users");
+            const userData=await result.json();
 
-            alert("login successful");
-            window.location.href="dashboard.html";
+            if(userData.some(user => user.username==usernameInput && user.password==passwordInput)){
+                window.location.href="dashboard.html";
+            }else{
+                alert("Invalid username or password.");
+            } 
         }
     </script>
 </html>
