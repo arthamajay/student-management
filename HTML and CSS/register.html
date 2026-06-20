@@ -50,9 +50,12 @@
             };
 
             if(pass==cpass){
-                const result=await fetch("http://localhost:3000/users",
+                const result=await fetch("http://localhost:8080/users",
                 {
                     method:"POST",
+                    "headers":{
+                        "Content-Type":"application/json"
+                    },
                     body:JSON.stringify(obj)
                 });
                 if(result.ok==true){

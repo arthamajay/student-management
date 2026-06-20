@@ -25,17 +25,34 @@
         async function login(event) {
             event.preventDefault();
 
-            const usernameInput=document.getElementById("username").value;
-            const passwordInput=document.getElementById("password").value;
+            const usernameInput = document.getElementById("username").value;
+            const passwordInput = document.getElementById("password").value;
+            const errorMsg = document.getElementById("errorMsg"); 
 
-            const result=await fetch("http://localhost:3000/users");
-            const userData=await result.json();
+            const loginPayload = {
+                "username": usernameInput,
+                "password": passwordInput
+            };
 
-            if(userData.some(user => user.username==usernameInput && user.password==passwordInput)){
-                window.location.href="dashboard.html";
-            }else{
-                alert("Invalid username or password.");
-            } 
+            try {
+                const result = await fetch("http://localhost:8080/users/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(loginPayload)
+                });
+
+                if (result.ok) { 
+                    window.location.href = "dashboard.html";
+                } else {
+                    alert("Invalid username or password.");
+                }
+            } catch (error) {
+                console.error("Network error:", error);
+                alert("Cannot connect to backend server. Make sure Spring Boot is running on port 8080.");
+            }
         }
+
     </script>
 </html>
