@@ -1,0 +1,27 @@
+package com.cvr.userdemo;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+	private UserRepo userRepo;
+
+	public UserService(UserRepo userRepo) {
+		this.userRepo = userRepo;
+	}
+
+	public void save(User user) {
+		userRepo.save(user);
+	}
+
+	public Optional<User> find(int id) {
+		return userRepo.findById(id);
+	}
+
+	public List<User> findAll() {
+		return userRepo.findAll();
+	}
+}

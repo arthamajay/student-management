@@ -1,0 +1,29 @@
+package com.example.productdemo;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+public class MainApp {
+
+    public static void main(String[] args) {
+
+        Session session =
+                HibernateUtil.getSessionFactory().openSession();
+
+        Transaction tx = session.beginTransaction();
+
+        Product p = new Product();
+
+        p.setId(1);
+        p.setName("Laptop");
+        p.setPrice(50000);
+
+        session.persist(p);
+
+        tx.commit();
+
+        session.close();
+
+        System.out.println("Product Inserted Successfully");
+    }
+}

@@ -1,0 +1,5 @@
+package com.example.productdemo;
+
+public class HibernateUtil {
+
+}

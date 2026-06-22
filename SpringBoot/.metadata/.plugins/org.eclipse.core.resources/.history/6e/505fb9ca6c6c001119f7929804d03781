@@ -1,0 +1,10 @@
+package com.cvr.userdemo;
+
+import jakarta.persistence.*;
+
+@Entity
+public class User {
+	@Id
+	@GeneratedValue(strategy=GeneratedType.IDENTITY)
+	private int id;
+}

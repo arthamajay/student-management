@@ -1,0 +1,153 @@
+package com.example.lms;
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+public class App {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+
+            System.out.println("\n===== LIBRARY MANAGEMENT MENU =====");
+            System.out.println("1. Add Book");
+            System.out.println("2. View All Books");
+            System.out.println("3. Update Book");
+            System.out.println("4. Delete Book");
+            System.out.println("5. Exit");
+            System.out.print("Enter Choice: ");
+
+            int choice = sc.nextInt();
+
+            switch (choice) {
+
+                case 1:
+                    Session session1 = HibernateUtil.getSessionFactory().openSession();
+                    Transaction tx1 = session1.beginTransaction();
+
+                    Book book = new Book();
+
+                    System.out.print("Enter Book ID: ");
+                    book.setBookId(sc.nextInt());
+
+                    sc.nextLine();
+
+                    System.out.print("Enter Title: ");
+                    book.setTitle(sc.nextLine());
+
+                    System.out.print("Enter Author: ");
+                    book.setAuthor(sc.nextLine());
+
+                    System.out.print("Enter Category: ");
+                    book.setCategory(sc.nextLine());
+
+                    System.out.print("Enter Price: ");
+                    book.setPrice(sc.nextDouble());
+
+                    System.out.print("Enter Available Copies: ");
+                    book.setAvailableCopies(sc.nextInt());
+
+                    session1.persist(book);
+
+                    tx1.commit();
+                    session1.close();
+
+                    System.out.println("Book Added Successfully!");
+                    break;
+
+                case 2:
+                    Session session2 = HibernateUtil.getSessionFactory().openSession();
+
+                    List<Book> books = session2.createQuery("from Book", Book.class).list();
+
+                    System.out.println("\n----- BOOK LIST -----");
+
+                    for (Book b : books) {
+                        System.out.println(
+                                b.getBookId() + " | " +
+                                b.getTitle() + " | " +
+                                b.getAuthor() + " | " +
+                                b.getCategory() + " | " +
+                                b.getPrice() + " | " +
+                                b.getAvailableCopies());
+                    }
+
+                    session2.close();
+                    break;
+
+                case 3:
+                    Session session3 = HibernateUtil.getSessionFactory().openSession();
+                    Transaction tx3 = session3.beginTransaction();
+
+                    System.out.print("Enter Book ID to Update: ");
+                    int updateId = sc.nextInt();
+
+                    Book existing = session3.get(Book.class, updateId);
+
+                    if (existing != null) {
+
+                        sc.nextLine();
+
+                        System.out.print("Enter New Title: ");
+                        existing.setTitle(sc.nextLine());
+
+                        System.out.print("Enter New Author: ");
+                        existing.setAuthor(sc.nextLine());
+
+                        System.out.print("Enter New Category: ");
+                        existing.setCategory(sc.nextLine());
+
+                        System.out.print("Enter New Price: ");
+                        existing.setPrice(sc.nextDouble());
+
+                        System.out.print("Enter New Available Copies: ");
+                        existing.setAvailableCopies(sc.nextInt());
+
+                        session3.merge(existing);
+
+                        System.out.println("Book Updated Successfully!");
+                    } else {
+                        System.out.println("Book Not Found!");
+                    }
+
+                    tx3.commit();
+                    session3.close();
+                    break;
+
+                case 4:
+                    Session session4 = HibernateUtil.getSessionFactory().openSession();
+                    Transaction tx4 = session4.beginTransaction();
+
+                    System.out.print("Enter Book ID to Delete: ");
+                    int deleteId = sc.nextInt();
+
+                    Book deleteBook = session4.get(Book.class, deleteId);
+
+                    if (deleteBook != null) {
+                        session4.remove(deleteBook);
+                        System.out.println("Book Deleted Successfully!");
+                    } else {
+                        System.out.println("Book Not Found!");
+                    }
+
+                    tx4.commit();
+                    session4.close();
+                    break;
+
+                case 5:
+                    System.out.println("Exiting...");
+                    sc.close();
+                    System.exit(0);
+                    break;
+
+                default:
+                    System.out.println("Invalid Choice!");
+            }
+        }
+    }
+}

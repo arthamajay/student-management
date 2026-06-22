@@ -1,0 +1,6 @@
+package com.cvr.userdemo;
+
+public class UserService {
+	private UserRepo userRepo;
+	
+}

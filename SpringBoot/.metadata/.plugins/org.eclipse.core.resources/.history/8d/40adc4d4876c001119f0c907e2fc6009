@@ -1,0 +1,7 @@
+package com.example.student;
+
+public class UserService {
+
+		@Service
+		
+}

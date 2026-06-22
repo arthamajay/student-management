@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.example.oms.HibenateUtil.java&apos; to &apos;HibernateUtil.java&apos;&#x0D;&#x0A;- Original project: &apos;oms&apos;&#x0D;&#x0A;- Original element: &apos;com.example.oms.HibenateUtil.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.example.oms.HibernateUtil.java&apos;" description="Rename compilation unit &apos;HibenateUtil.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.oms{HibenateUtil.java" name="HibernateUtil.java" references="false" stamp="1781862507027" version="1.0"/>
+</session>

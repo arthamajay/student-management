@@ -1,0 +1,6 @@
+package com.example.student;
+
+@RestConr=troller
+public class UserController {
+
+}

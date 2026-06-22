@@ -1,0 +1,28 @@
+package com.cvr.userdemo;
+
+import java.util.Optional;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/users")
+public class UserController {
+
+    private UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void save(@RequestBody User user) {
+        userService.save(user);
+    }
+
+    @GetMapping("/{id}")
+    public Optional<User> get(@PathVariable int id) {
+        return userService.find(id);
+    }
+}

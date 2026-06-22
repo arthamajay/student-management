@@ -1,0 +1,7 @@
+package com.example.student;
+
+@RestController
+
+public class UserController {
+
+}

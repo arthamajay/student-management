@@ -1,0 +1,8 @@
+package com.cvr.userdemo;
+
+import jakarta.persistance.Entity;
+
+@Entity
+public class User {
+
+}

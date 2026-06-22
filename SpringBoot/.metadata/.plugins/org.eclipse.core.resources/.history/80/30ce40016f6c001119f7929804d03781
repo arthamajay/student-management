@@ -1,0 +1,6 @@
+package com.cvr.userdemo;
+
+@RestController
+public class UserController {
+
+}

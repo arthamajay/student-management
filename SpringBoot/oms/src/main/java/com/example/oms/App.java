@@ -1,0 +1,180 @@
+package com.example.oms;
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+public class App {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+
+            System.out.println("\n===== ORDER MANAGEMENT SYSTEM =====");
+            System.out.println("1. Add Order");
+            System.out.println("2. View All Orders");
+            System.out.println("3. Update Order");
+            System.out.println("4. Delete Order");
+            System.out.println("5. Exit");
+            System.out.print("Enter Choice: ");
+
+            int choice = sc.nextInt();
+
+            switch (choice) {
+
+                case 1:
+
+                    Session session1 = HibernateUtil.getSessionFactory().openSession();
+                    Transaction tx1 = session1.beginTransaction();
+
+                    Order order = new Order();
+
+                    System.out.print("Enter Order ID: ");
+                    order.setOrderId(sc.nextInt());
+
+                    sc.nextLine();
+
+                    System.out.print("Enter Customer Name: ");
+                    order.setCustomerName(sc.nextLine());
+
+                    System.out.print("Enter Food Item: ");
+                    order.setFoodItem(sc.nextLine());
+
+                    System.out.print("Enter Quantity: ");
+                    order.setQuantity(sc.nextInt());
+
+                    System.out.print("Enter Total Amount: ");
+                    order.setTotalAmount(sc.nextDouble());
+
+                    sc.nextLine();
+
+                    System.out.print("Enter Order Date (yyyy-mm-dd): ");
+                    order.setOrderDate(sc.nextLine());
+
+                    System.out.print("Enter Order Status: ");
+                    order.setOrderStatus(sc.nextLine());
+
+                    session1.persist(order);
+
+                    tx1.commit();
+                    session1.close();
+
+                    System.out.println("Order Added Successfully!");
+                    break;
+
+                case 2:
+
+                    Session session2 = HibernateUtil.getSessionFactory().openSession();
+
+                    List<Order> orders =
+                            session2.createQuery("from Order", Order.class).list();
+
+                    System.out.println("\n----------- ORDER LIST -----------");
+
+                    for (Order o : orders) {
+
+                        System.out.println(
+                                "Order ID      : " + o.getOrderId() +
+                                "\nCustomer Name : " + o.getCustomerName() +
+                                "\nFood Item     : " + o.getFoodItem() +
+                                "\nQuantity      : " + o.getQuantity() +
+                                "\nTotal Amount  : " + o.getTotalAmount() +
+                                "\nOrder Date    : " + o.getOrderDate() +
+                                "\nStatus        : " + o.getOrderStatus());
+
+                        System.out.println("----------------------------------");
+                    }
+
+                    session2.close();
+                    break;
+
+                case 3:
+
+                    Session session3 = HibernateUtil.getSessionFactory().openSession();
+                    Transaction tx3 = session3.beginTransaction();
+
+                    System.out.print("Enter Order ID to Update: ");
+                    int updateId = sc.nextInt();
+
+                    Order existingOrder =
+                            session3.get(Order.class, updateId);
+
+                    if (existingOrder != null) {
+
+                        sc.nextLine();
+
+                        System.out.print("Enter New Customer Name: ");
+                        existingOrder.setCustomerName(sc.nextLine());
+
+                        System.out.print("Enter New Food Item: ");
+                        existingOrder.setFoodItem(sc.nextLine());
+
+                        System.out.print("Enter New Quantity: ");
+                        existingOrder.setQuantity(sc.nextInt());
+
+                        System.out.print("Enter New Total Amount: ");
+                        existingOrder.setTotalAmount(sc.nextDouble());
+
+                        sc.nextLine();
+
+                        System.out.print("Enter New Order Date: ");
+                        existingOrder.setOrderDate(sc.nextLine());
+
+                        System.out.print("Enter New Order Status: ");
+                        existingOrder.setOrderStatus(sc.nextLine());
+
+                        session3.merge(existingOrder);
+
+                        System.out.println("Order Updated Successfully!");
+                    } else {
+
+                        System.out.println("Order Not Found!");
+                    }
+
+                    tx3.commit();
+                    session3.close();
+                    break;
+
+                case 4:
+
+                    Session session4 = HibernateUtil.getSessionFactory().openSession();
+                    Transaction tx4 = session4.beginTransaction();
+
+                    System.out.print("Enter Order ID to Delete: ");
+                    int deleteId = sc.nextInt();
+
+                    Order deleteOrder =
+                            session4.get(Order.class, deleteId);
+
+                    if (deleteOrder != null) {
+
+                        session4.remove(deleteOrder);
+                        System.out.println("Order Deleted Successfully!");
+
+                    } else {
+
+                        System.out.println("Order Not Found!");
+                    }
+
+                    tx4.commit();
+                    session4.close();
+                    break;
+
+                case 5:
+
+                    System.out.println("Exiting Application...");
+                    sc.close();
+                    System.exit(0);
+                    break;
+
+                default:
+
+                    System.out.println("Invalid Choice! Please try again.");
+            }
+        }
+    }
+}

@@ -1,0 +1,152 @@
+package com.example.studentdemo;
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+public class App {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+
+            System.out.println("\n===== STUDENT MANAGEMENT MENU =====");
+            System.out.println("1. Insert Student");
+            System.out.println("2. View All Students");
+            System.out.println("3. Update Student");
+            System.out.println("4. Delete Student");
+            System.out.println("5. Exit");
+            System.out.print("Enter Choice: ");
+
+            int choice = sc.nextInt();
+
+            switch (choice) {
+
+                // INSERT
+                case 1:
+                    Session session1 = HibernateUtil.getSessionFactory().openSession();
+                    Transaction tx1 = session1.beginTransaction();
+
+                    Student s = new Student();
+
+                    System.out.print("Enter Student ID: ");
+                    s.setStudentId(sc.nextInt());
+
+                    sc.nextLine();
+
+                    System.out.print("Enter Student Name: ");
+                    s.setStudentName(sc.nextLine());
+
+                    System.out.print("Enter Email: ");
+                    s.setEmail(sc.nextLine());
+
+                    System.out.print("Enter Course: ");
+                    s.setCourse(sc.nextLine());
+
+                    System.out.print("Enter Age: ");
+                    s.setAge(sc.nextInt());
+
+                    session1.persist(s);
+
+                    tx1.commit();
+                    session1.close();
+
+                    System.out.println("Student Inserted Successfully!");
+                    break;
+
+                // VIEW ALL
+                case 2:
+                    Session session2 = HibernateUtil.getSessionFactory().openSession();
+
+                    List<Student> students =
+                            session2.createQuery("from Student", Student.class).list();
+
+                    System.out.println("\n----- STUDENT LIST -----");
+
+                    for (Student st : students) {
+                        System.out.println(
+                                st.getStudentId() + " | " +
+                                st.getStudentName() + " | " +
+                                st.getEmail() + " | " +
+                                st.getCourse() + " | " +
+                                st.getAge());
+                    }
+
+                    session2.close();
+                    break;
+
+                // UPDATE
+                case 3:
+                    Session session3 = HibernateUtil.getSessionFactory().openSession();
+                    Transaction tx3 = session3.beginTransaction();
+
+                    System.out.print("Enter Student ID to Update: ");
+                    int updateId = sc.nextInt();
+
+                    Student existing = session3.get(Student.class, updateId);
+
+                    if (existing != null) {
+
+                        sc.nextLine();
+
+                        System.out.print("Enter New Name: ");
+                        existing.setStudentName(sc.nextLine());
+
+                        System.out.print("Enter New Email: ");
+                        existing.setEmail(sc.nextLine());
+
+                        System.out.print("Enter New Course: ");
+                        existing.setCourse(sc.nextLine());
+
+                        System.out.print("Enter New Age: ");
+                        existing.setAge(sc.nextInt());
+
+                        session3.merge(existing);
+
+                        System.out.println("Student Updated Successfully!");
+                    } else {
+                        System.out.println("Student Not Found!");
+                    }
+
+                    tx3.commit();
+                    session3.close();
+                    break;
+
+                // DELETE
+                case 4:
+                    Session session4 = HibernateUtil.getSessionFactory().openSession();
+                    Transaction tx4 = session4.beginTransaction();
+
+                    System.out.print("Enter Student ID to Delete: ");
+                    int deleteId = sc.nextInt();
+
+                    Student student = session4.get(Student.class, deleteId);
+
+                    if (student != null) {
+                        session4.remove(student);
+                        System.out.println("Student Deleted Successfully!");
+                    } else {
+                        System.out.println("Student Not Found!");
+                    }
+
+                    tx4.commit();
+                    session4.close();
+                    break;
+
+                // EXIT
+                case 5:
+                    System.out.println("Exiting...");
+                    sc.close();
+                    System.exit(0);
+                    break;
+
+                default:
+                    System.out.println("Invalid Choice!");
+            }
+        }
+    }
+}
